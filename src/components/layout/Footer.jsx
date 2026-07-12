@@ -17,9 +17,9 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="FakeCraving on Instagram"
-            className="flex items-center justify-center w-8 h-8 rounded-full border border-aubergine/15 dark:border-ivory/20 text-aubergine dark:text-ivory hover:bg-aubergine/5 dark:hover:bg-ivory/10 transition-colors"
+            className="flex items-center justify-center w-8 h-8 rounded-full hover:opacity-80 transition-opacity"
           >
-            <InstagramIcon size={16} />
+            <InstagramIcon size={20} />
           </a>
         </div>
       </div>

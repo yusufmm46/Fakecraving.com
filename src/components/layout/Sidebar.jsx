@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { Mail } from "lucide-react";
 import { useCart } from "../../context/CartContext";
 import { NAV_ITEMS } from "./navItems";
 import DarkModeToggle from "../shared/DarkModeToggle";
@@ -6,6 +7,11 @@ import DonateButton from "../shared/DonateButton";
 import InstagramIcon from "../shared/InstagramIcon";
 
 const INSTAGRAM_URL = "https://www.instagram.com/fakecraving.india/";
+
+// Contact is desktop-sidebar-only (mobile's bottom nav only has room for 4
+// icons), so it's appended here rather than added to the shared NAV_ITEMS
+// that BottomNav also renders.
+const SIDEBAR_NAV_ITEMS = [...NAV_ITEMS, { to: "/contact", label: "Contact", icon: Mail }];
 
 export default function Sidebar() {
   const { itemCount } = useCart();
@@ -22,7 +28,7 @@ export default function Sidebar() {
       </div>
 
       <nav className="flex-1 space-y-1">
-        {NAV_ITEMS.map(({ to, label, icon: Icon, end, badgeKey }) => (
+        {SIDEBAR_NAV_ITEMS.map(({ to, label, icon: Icon, end, badgeKey }) => (
           <NavLink
             key={to}
             to={to}
@@ -56,9 +62,9 @@ export default function Sidebar() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="FakeCraving on Instagram"
-          className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-aubergine/15 dark:border-ivory/20 text-aubergine dark:text-ivory hover:bg-aubergine/5 dark:hover:bg-ivory/10 transition-colors"
+          className="inline-flex items-center justify-center w-10 h-10 rounded-full hover:opacity-80 transition-opacity"
         >
-          <InstagramIcon size={18} />
+          <InstagramIcon size={22} />
         </a>
       </div>
     </aside>
