@@ -3,6 +3,9 @@ import { useCart } from "../../context/CartContext";
 import { NAV_ITEMS } from "./navItems";
 import DarkModeToggle from "../shared/DarkModeToggle";
 import DonateButton from "../shared/DonateButton";
+import InstagramIcon from "../shared/InstagramIcon";
+
+const INSTAGRAM_URL = "https://www.instagram.com/fakecraving.india/";
 
 export default function Sidebar() {
   const { itemCount } = useCart();
@@ -48,6 +51,15 @@ export default function Sidebar() {
       <div className="flex items-center gap-2 px-2 pt-4 border-t border-aubergine/10 dark:border-ivory/10">
         <DonateButton className="flex-1 justify-center" />
         <DarkModeToggle />
+        <a
+          href={INSTAGRAM_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="FakeCraving on Instagram"
+          className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-aubergine/15 dark:border-ivory/20 text-aubergine dark:text-ivory hover:bg-aubergine/5 dark:hover:bg-ivory/10 transition-colors"
+        >
+          <InstagramIcon size={18} />
+        </a>
       </div>
     </aside>
   );

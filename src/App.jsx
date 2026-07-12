@@ -6,6 +6,7 @@ import Cart from "./pages/Cart";
 import Tracking from "./pages/Tracking";
 import OrderHistory from "./pages/OrderHistory";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/tracking/:orderId" element={<Tracking />} />
         <Route path="/orders" element={<OrderHistory />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </AppShell>
   );
